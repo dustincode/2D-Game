@@ -98,10 +98,10 @@ public class DisplayManager {
     }
 
     /**
-     * Checks if the display window is closed.
-     * @return true in case of the display window is closed
+     * Checks if the display window request to close.
+     * @return true in case of request to close the display window.
      */
-    public static boolean isCloseDisplay() {
+    public static boolean isCloseDisplayRequested() {
         return glfwWindowShouldClose(glfwWindow);
     }
 }
