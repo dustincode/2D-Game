@@ -9,7 +9,8 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 /**
- * This class contains all the methods needed to setup, maintain and close a display window.
+ * This class contains all the methods needed to setup, maintain and close a
+ * display window.
  *
  * @author Dustin Ng
  */
@@ -62,9 +63,6 @@ public class DisplayManager {
         // externally. LWJGL detects the context that is current in the current thread, create the GLCapabilities
         // instance and makes the OpenGL bindings available for use.
         GL.createCapabilities();
-
-        // Set the color that the function GL11.glClear will clear to.
-        GL11.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     /**
@@ -73,10 +71,6 @@ public class DisplayManager {
     public static void updateDisplay() {
         // Poll events like key events or mouse events
         glfwPollEvents();
-
-        // Before draw something on virtual screen, we need to clear the color on every pixel to the color was set
-        // by GL11.glClearColor
-        GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 
         // There are two buffers, one current show (aka actual screen) and one we draw on (aka virtual screen).
         // So every time we use OpenGL to draw something to the screen, we are actually drawing to a hidden virtual screen.
